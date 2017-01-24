@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.krzysztof.volleyballcounter.MainActivity"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.krzysztof.volleyballcounter.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,69 +18,43 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/set_left"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/icon"
-                android:id="@+id/set_left"
-                android:visibility="invisible"/>
+                android:visibility="visible" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="+"
-                    android:onClick="incrementScoreFirst"/>
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="-"
-                    android:onClick="decrementScoreFirst"/>
-
-            </LinearLayout>
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="incrementScoreFirst"
+                android:text="+" />
 
             <TextView
+                android:id="@+id/score_board"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00 : 00"
-                android:id="@+id/score_board"
-                android:textSize="50sp"/>
-
+                android:textSize="50sp" />
             />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="+"
-                    android:onClick="incrementScoreSecond"/>
-
-                <Button
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:text="-"
-                    android:onClick="decrementScoreSecond"/>
-
-            </LinearLayout>
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="incrementScoreSecond"
+                android:text="+" />
 
             <ImageView
+                android:id="@+id/set_right"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/icon"
-                android:id="@+id/set_right"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
         </LinearLayout>
 
@@ -92,12 +66,14 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Koniec seta"/>
+                android:text="Koniec seta"
+                android:onClick="finishSet"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reset gry"/>
+                android:text="Reset gry"
+                android:onClick="resetGame"/>
 
         </LinearLayout>
 
@@ -106,180 +82,175 @@
             android:layout_height="wrap_content"
             android:text="Wyniki setów : "
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set 1 : "
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_1_first_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_1_first_team"
-                android:textSize="30sp"
-                android:text="00"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:text=":"
-                />
+                android:textSize="30sp" />
+
             <TextView
+                android:id="@+id/set_1_second_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_1_second_team"
-                android:textSize="30sp"
                 android:text="00"
-                />
+                android:textSize="30sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set 2 : "
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_2_first_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_2_first_team"
-                android:textSize="30sp"
-                android:text="00"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:text=":"
-                />
+                android:textSize="30sp" />
+
             <TextView
+                android:id="@+id/set_2_second_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_2_second_team"
-                android:textSize="30sp"
                 android:text="00"
-                />
+                android:textSize="30sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set 3 : "
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_3_first_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_3_first_team"
-                android:textSize="30sp"
-                android:text="00"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:text=":"
-                />
+                android:textSize="30sp" />
+
             <TextView
+                android:id="@+id/set_3_second_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_3_second_team"
-                android:textSize="30sp"
                 android:text="00"
-                />
+                android:textSize="30sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set 4 : "
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_4_first_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_4_first_team"
-                android:textSize="30sp"
-                android:text="00"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:text=":"
-                />
+                android:textSize="30sp" />
+
             <TextView
+                android:id="@+id/set_4_second_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_4_second_team"
-                android:textSize="30sp"
                 android:text="00"
-                />
+                android:textSize="30sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Set 5 : "
-                android:textSize="30sp"/>
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/set_5_first_team"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_5_first_team"
-                android:textSize="30sp"
-                android:text="00"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
                 android:text=":"
-                />
+                android:textSize="30sp" />
+
             <TextView
+                android:id="@+id/set_5_second_team"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/set_5_second_team"
-                android:textSize="30sp"
                 android:text="00"
-                />
+                android:textSize="30sp" />
 
         </LinearLayout>
     </LinearLayout>
