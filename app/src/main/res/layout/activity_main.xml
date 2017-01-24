@@ -16,6 +16,30 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/team_one_name"
+                android:hint="First Team Name"
+                android:text=""/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/team_two_name"
+                android:hint="Second Team Name"
+                android:text=""/>
+
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

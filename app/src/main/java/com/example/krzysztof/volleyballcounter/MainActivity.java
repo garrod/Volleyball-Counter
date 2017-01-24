@@ -128,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
         scoreFirst = 0;
         scoreSecond = 0;
 
+        TextView teamOneName = (TextView) findViewById(R.id.team_one_name);
+        teamOneName.setText("");
+        TextView teamTwoName = (TextView) findViewById(R.id.team_two_name);
+        teamTwoName.setText("");
+
         for (TextView textObj : resultsLeftArray) {
             textObj.setText("00");
         }
